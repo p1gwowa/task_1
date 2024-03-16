@@ -1,8 +1,7 @@
 def total_salary(path) -> tuple:
     try:
-        with open("salary_file.txt", 'r') as file:                                          # open "salary_file.txt" in read mode
-            text = file.readlines()                                                         # converting file content in list for future processing
-            worker_salary = [el.strip() for el in text]                                     # removing el "\n" from list
+        with open("salary_file.txt", 'r') as file:                                          # open "salary_file.txt" in read mode                                                        # converting file content in list for future processing
+            worker_salary = [el.strip() for el in file.readlines()]                         # removing el "\n" from list
             name_salary = [el.split(',') for el in worker_salary]                           # spliting elements in list by ','
             name_salary_list = [el for element in name_salary for el in element]            # unpacking lists from list into one list
             salary_number_list = []
